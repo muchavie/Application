@@ -9,13 +9,16 @@ var    express = require('express'),
          flash = require('connect-flash'),
         routes = require('./routes/index'),
          users = require('./routes/users'),
+      nunjucks = require('nunjucks'),
            app = express();
 
 //
-//  VIEW ENGINE
+//   Template Engine
 //
-app.set('views', 'views');
-app.set('view engine', 'jade');
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
+});
 
 //
 //  EXPRESS Configuration

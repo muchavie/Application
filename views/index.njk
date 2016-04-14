@@ -1,0 +1,13 @@
+{% extends 'layout.njk' %}
+
+{% block container %}
+
+    {% if user %}
+        <p>You are currently loggged in as {{ user.username }}</p>
+        <a href = '/logout'>logout</a>
+    {% else %}
+        <a href = '/login'>login</a><br>
+        <a href = '/register'>register</a>
+    {% endif %}
+
+{% endblock%}

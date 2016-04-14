@@ -1,0 +1,8 @@
+{% extends 'layout.njk'}
+
+{% block container %}
+        ID: {{ user.id }}<br/>
+        Username: {{ user.username }}<br/>
+        Name: {{ user.displayName }}<br/>
+        <a href = '/logout'>Log out</a>
+{% endblock %}

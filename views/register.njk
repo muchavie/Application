@@ -1,0 +1,28 @@
+{% extends 'layout.njk' %}
+
+{% block container %}
+
+    <h1>Register</h1><br>
+
+    {% if error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+
+    <form action = '/register' method = 'post' style = 'max-width: 300px'>
+
+        <div class = 'form-group'>
+            <label for = 'uid'>User Name</label>
+            <input name = 'username' type = 'text' class = 'form-control' id = 'uid' placeholder = 'User Name'>
+        </div>
+
+        <div class = 'form-group'>
+            <label for = 'pid'>Password</label>
+            <input name = 'password' type = 'password' class = 'form-control' id = 'pid' placeholder="Password">
+        </div>
+
+        <button type = 'submit' class = 'btn btn-primary'>Submit</button>
+        <button type = 'reset'  class = 'btn btn-default'>Reset</button>
+
+    </form>
+
+{% endblock %}

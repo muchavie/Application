@@ -5,17 +5,19 @@ var router = express.Router();
 
 
 router.get('/', function (req, res) {
-    res.render('index', { user : req.user });
+    res.render('index.njk', { user : req.user, title : 'Welcome' });
 });
 
 router.get('/register', function(req, res) {
-    res.render('register', { });
+    console.log('GET /register')
+    res.render('register.njk', {title: 'Register'});
 });
 
 router.post('/register', function(req, res, next) {
+    console.log('POST /register')
     Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
         if (err) {
-          return res.render('register', { error : err.message });
+          return res.render('register.njk', { error : err.message });
         }
 
         passport.authenticate('local')(req, res, function () {
@@ -31,7 +33,7 @@ router.post('/register', function(req, res, next) {
 
 
 router.get('/login', function(req, res) {
-    res.render('login', { user : req.user, error : req.flash('error')});
+    res.render('login.njk', { user : req.user, title : 'Login', error : req.flash('error')});
 });
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), function(req, res, next) {
