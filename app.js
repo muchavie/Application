@@ -8,7 +8,6 @@ var    express = require('express'),
  LocalStrategy = require('passport-local').Strategy,
          flash = require('connect-flash'),
         routes = require('./routes/index'),
-         users = require('./routes/users'),
       nunjucks = require('nunjucks'),
            app = express();
 
@@ -23,6 +22,8 @@ nunjucks.configure('views', {
 //
 //  EXPRESS Configuration
 //
+app.engine('njk', nunjucks.render);
+app.set('view engine', 'njk');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

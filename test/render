@@ -3,7 +3,7 @@
 'use strict'
 
 let nunjucks = require('nunjucks'),
-       files = ['register.njk'];
+       files = ['profile.njk'];
 
 
 nunjucks.configure('../views');
