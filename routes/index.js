@@ -56,7 +56,6 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-    console.log(req.user);
 
     if (req.user == null) {
         res.redirect('/');
@@ -64,6 +63,22 @@ router.get('/about', function(req, res, next) {
         res.render('about', { title : 'About Me', user : req.user });
     }
 
+});
+
+router.get('/goal', function (req, res, next) {
+    res.render('goal', {title : 'Goal'});
+});
+
+router.get('/plan', function (req, res, next) {
+    res.render('plan', {title : 'Plan'});
+});
+
+router.get('/need', function (req, res, next) {
+    res.render('need', {title : 'Need'});
+});
+
+router.get('/essay', function (req, res, next) {
+    res.render('essay', {title : 'Essay'});
 });
 
 router.get('/ping', function(req, res){

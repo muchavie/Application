@@ -1,16 +1,9 @@
 {% extends 'layout.njk' %}
 
 {% block style %}
-.row {
-      padding-top : 25px;
-}
 
-rect {
-     fill-opacity : 0.5;
-             fill : rgb(0,0,255);
-}
-text {
-      font-family : 'Verdana';
+#about-text {
+    fill : black;  /* this is svg text */
 }
 {% endblock %}
 
@@ -106,9 +99,9 @@ text {
     </div>
     <div class = 'col-md-3'>
         <select class = 'form-control'>
-            <option>Public Adgency</option>
+            <option>Public Agency</option>
             <option>Community Event</option>
-            <option>Social Service Adgency</option>
+            <option>Social Service Agency</option>
             <option>Employer</option>
             <option>School</option>
             <option>Jewish Organization</option>
