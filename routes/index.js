@@ -1,8 +1,7 @@
-var express = require('express');
-var passport = require('passport');
-var Account = require('../models/account');
-var router = express.Router();
-
+var express = require('express'),
+   passport = require('passport'),
+    Account = require('../models/account'),
+     router = express.Router();
 
 router.get('/', function (req, res) {
     res.render('index', { user : req.user, title : 'Welcome' });
@@ -15,7 +14,8 @@ router.get('/register', function(req, res) {
 
 router.post('/register', function(req, res, next) {
     console.log('POST /register')
-    Account.register(new Account({ username : req.body.username }), req.body.password, function(err, account) {
+    Account.register(new Account({ username : req.body.username }), req.body.password,
+    function(err, account) {
         if (err) {
           return res.render('register', { error : err.message });
         }
@@ -25,7 +25,7 @@ router.post('/register', function(req, res, next) {
                 if (err) {
                     return next(err);
                 }
-                res.redirect('/');
+                res.redirect('/about');
             });
         });
     });
@@ -41,7 +41,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
         if (err) {
             return next(err);
         }
-        res.redirect('/');
+        res.redirect('/about');
     });
 });
 
@@ -56,7 +56,14 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-    res.render('about', { title : 'About Me' });
+    console.log(req.user);
+
+    if (req.user == null) {
+        res.redirect('/');
+    } else {
+        res.render('about', { title : 'About Me', user : req.user });
+    }
+
 });
 
 router.get('/ping', function(req, res){

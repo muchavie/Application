@@ -1,8 +1,129 @@
 {% extends 'layout.njk' %}
 
+{% block style %}
+.row {
+      padding-top : 25px;
+}
+
+rect {
+     fill-opacity : 0.5;
+             fill : rgb(0,0,255);
+}
+text {
+      font-family : 'Verdana';
+}
+{% endblock %}
+
 {% block container %}
-        <p>ID: {{ user.id }}</p><br/>
-        Username: {{ user.username }}<br/>
-        Name: {{ user.displayName }}<br/>
-        <a href = '/logout'>Log out</a>
+
+<div class = 'row'>
+    <div class = 'col-md-6'>
+        <div class = 'input-group input-group-md'>
+             <span class = 'input-group-addon' id = 'FirstName-add'>First</span>
+             <input type = 'text' class = 'form-control' placeholder = 'First Name'>
+        </div>
+    </div>
+    <div class = 'col-md-6'>
+        <div class = 'input-group input-group-md'>
+             <span class = 'input-group-addon' id = 'LastName-add'>Last</span>
+             <input type = 'text' class = 'form-control' placeholder = 'Last Name'>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-2'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'StreetNum-add'>Street #</span>
+            <input type = 'text' class = 'form-control' placeholder = '1234'>
+        </div>
+    </div>
+    <div class = 'col-md-8'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'StreetName-add'>Street Name</span>
+            <input type = 'text' class = 'form-control' placeholder = 'Main Street'>
+        </div>
+    </div>
+    <div class = 'col-md-2'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'AptNum-add'>Apt #</span>
+            <input type = 'text' class = 'form-control' placeholder = '42'>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-8'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'City-add'>City</span>
+            <input type = 'text' class = 'form-control' placeholder = 'Any Town'>
+        </div>
+    </div>
+    <div class = 'col-md-2'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'State-add'>State</span>
+            <input type = 'text' class = 'form-control' placeholder = 'CA'>
+        </div>
+    </div>
+    <div class = 'col-md-2'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'Zip-add'>Zip</span>
+            <input type = 'text' class = 'form-control' placeholder = '12345'>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-3'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'HomeNum-add'>Home #</span>
+            <input type = 'text' class = 'form-control' placeholder = '(555) 123 - 1212'>
+        </div>
+    </div>
+    <div class = 'col-md-3'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'MobileNum-add'>Mobile #</span>
+            <input type = 'text' class = 'form-control' placeholder = '(555) 123 - 1212'>
+        </div>
+    </div>
+    <div class = 'col-md-3'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'dob-add'>DOB</span>
+            <input type = 'text' class = 'form-control' placeholder = 'mm-dd-yyyy'>
+        </div>
+    </div>
+    <div class = 'col-md-3'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'Religion-add'>Religion</span>
+            <input type = 'text' class = 'form-control' placeholder = 'My Faith'>
+        </div>
+    </div>
+</div>
+
+<div class = 'row'>
+    <div class = 'col-md-3'>
+        <p>How did you hear about the scholarship?</p>
+    </div>
+    <div class = 'col-md-3'>
+        <select class = 'form-control'>
+            <option>Public Adgency</option>
+            <option>Community Event</option>
+            <option>Social Service Adgency</option>
+            <option>Employer</option>
+            <option>School</option>
+            <option>Jewish Organization</option>
+            <option>JVS</option>
+            <option>Media</option>
+            <option>Media</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class = 'col-md-6'>
+        <div class = 'input-group input-group-md'>
+            <span class = 'input-group-addon' id = 'Source-add'>Specify</span>
+            <input type = 'text' class = 'form-control' placeholder = 'How I got here'>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

@@ -9,12 +9,43 @@
     <title>{{ title }}</title>
     <style>
         @import url('bootstrap.css');
+        body {
+            padding-top : 50px;
+        }
+        {%block style %}{% endblock %}
     </style>
     <script src = '/jquery.js'></script>
     <script src = '/bootstrap.js'></script>
 </head>
 <body>
     <div class = 'container'>
+        
+        <svg width = '1200' height = '120' viewbox = '0 0 1200 120'>
+
+
+          <rect     x = '0'       y = '10'
+                width = '220' height = '100'
+                   rx = '15'      ry = '15'/>
+          <rect     x = '230'      y = '10'
+                width = '220' height = '100'
+                  rx = '15'       ry = '15'/>
+          <rect     x = '460'      y = '10'
+                width = '220' height = '100'
+                   rx = '15'       ry = '15'/>
+          <rect     x = '690'      y = '10'
+                width = '220' height = '100'
+                   rx = '15'       ry = '15'/>
+          <rect     x = '920'      y = '10'
+                width = '220' height = '100'
+                    rx = '15'       ry = '15'/>
+
+          <text  id = 'about-text' x = '25'  y = '70' font-size = '35' style = 'fill: white;'>About Me</text>
+          <text  id = 'goal-text'  x = '300' y = '70' font-size = '35'>Goal</text>
+          <text  id = 'plan-text'  x = '535' y = '70' font-size = '35'>Plan</text>
+          <text  id = 'need-text'  x = '755' y = '70' font-size = '35'>Need</text>
+          <text  id = 'essay-text' x = '975' y = '70' font-size = '35'>Essay</text>
+
+        </svg>
 
      {% block container %}{% endblock %}
 
