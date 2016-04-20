@@ -1,0 +1,44 @@
+{% extends 'layout.njk' %}
+
+{% block style %}
+.beast {
+	float : right;
+	margin : 0
+}
+#beastainer {
+	float:right;
+	padding:20px 0 20px 20px;
+	position:relative
+}
+#beast404le,#beast404re {
+	position:absolute;
+	-webkit-animation-delay:6s;
+	animation-delay:6s;
+	-webkit-animation-duration:7s;
+	animation-duration:7s;
+	-webkit-animation-iteration-count:infinite;
+	animation-iteration-count:infinite;
+	-webkit-animation-play-state:running;
+	animation-play-state:running
+}
+#beast404re {
+	left:231px;
+	top:68px;
+	-webkit-animation-name:crazyrighteye;
+	animation-name:crazyrighteye
+}
+#beast404le {
+	left:125px;
+	top:65px;
+	-webkit-animation-name:crazylefteye;
+	animation-name:crazylefteye
+}
+{% endblock %}
+
+{% block container %}
+    <div id = 'beastainer'>
+        <img id = 'beast404le' src = '/beast-404_LE.png'>
+        <img id = 'beast404re' src = '/beast-404_RE.png'>
+        <img class = 'beast' src = '/beast-404.png'>
+    </div>
+{% endblock %}
