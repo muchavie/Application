@@ -10,6 +10,7 @@ var  app = require('../app'),
    debug = require('debug')('passport-local-express4:server'),
     http = require('http'),
    https = require('https'),
+      fs = require('fs'),
   server, privateKey, certificate, credentials;
 
 /*
