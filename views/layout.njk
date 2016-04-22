@@ -10,12 +10,15 @@
     <style>
         @import url('bootstrap.css');
         body {
-            padding-top : 50px;
+            padding-top : 25px;
         }
         .row {
               padding-top : 25px;
         }
-
+        .logout {
+            margin : 0px 10px 0px 0px;
+            padding-left: 30px;
+        }
         rect {
              fill-opacity : 0.2;
                      fill : rgb(50,50,50);
@@ -31,7 +34,9 @@
     <script src = '/bootstrap.js'></script>
 </head>
 <body>
-    <div class = 'container'>
+    <p class = 'logout'>Version {{ version }} (α)<p>
+    <a class = 'logout' href = '/logout'>logout</a>
+    <div class = 'container' style = 'padding-top : 50px'>
 
         <svg width = '1200' height = '120' viewbox = '0 0 1200 120'>
 

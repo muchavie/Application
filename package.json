@@ -1,6 +1,6 @@
 {
-  "name": "passport-local-express4",
-  "version": "0.0.0",
+  "name": "Application",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mjhea0/passport-local-express4.git"
+    "url": "git@github.com/muchavie/Application.git"
   },
-  "author": "Michael Herman <michael@mherman.org>",
+  "author": "Peter Ogilvie (code@ogivlie.us.com)",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.10.2",
@@ -20,7 +20,6 @@
     "debug": "^2.1.1",
     "express": "^4.11.1",
     "express-session": "^1.10.1",
-    "jade": "^1.9.1",
     "mocha": "~1.14.0",
     "mongoose": "^4.4.1",
     "morgan": "^1.5.1",

@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+'use strict'
+
+
 
 /*
  * Module dependencies.
@@ -7,7 +10,6 @@ var  app = require('../app'),
    debug = require('debug')('passport-local-express4:server'),
     http = require('http'),
    https = require('https'),
-      fs = require('fs'),
   server, privateKey, certificate, credentials;
 
 /*
@@ -33,6 +35,8 @@ else {
     server = https.createServer(credentials, app);
     console.log(`Running https on port: ${port}`);
 }
+
+
 
 /*
  * Listen on provided port, on all network interfaces.

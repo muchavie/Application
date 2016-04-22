@@ -1,10 +1,19 @@
+'use strict'
+
+/* Sync Read package.json
+*/
+let fs = require('fs');
+let config = JSON.parse(fs.readFileSync('./package.json'));
+console.log(`Version ${config.version} (α)`);
+
+
 var express = require('express'),
    passport = require('passport'),
     Account = require('../models/account'),
      router = express.Router();
 
 router.get('/', function (req, res) {
-    res.render('index', { user : req.user, title : 'Welcome' });
+    res.render('index', { user : req.user, title : 'Welcome'});
 });
 
 router.get('/register', function(req, res) {
@@ -56,29 +65,28 @@ router.get('/logout', function(req, res, next) {
 });
 
 router.get('/about', function(req, res, next) {
-
     if (req.user == null) {
         res.redirect('/');
     } else {
-        res.render('about', { title : 'About Me', user : req.user });
+        res.render('about', { title : 'About Me', user : req.user, version : config.version});
     }
 
 });
 
 router.get('/goal', function (req, res, next) {
-    res.render('goal', {title : 'Goal'});
+    res.render('goal', {title : 'Goal', version : config.version});
 });
 
 router.get('/plan', function (req, res, next) {
-    res.render('plan', {title : 'Plan'});
+    res.render('plan', {title : 'Plan', version : config.version});
 });
 
 router.get('/need', function (req, res, next) {
-    res.render('need', {title : 'Need'});
+    res.render('need', {title : 'Need', version : config.version});
 });
 
 router.get('/essay', function (req, res, next) {
-    res.render('essay', {title : 'Essay'});
+    res.render('essay', {title : 'Essay', version : config.version});
 });
 
 router.get('/ping', function(req, res){
