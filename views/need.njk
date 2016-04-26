@@ -8,16 +8,41 @@
 
 {% block container %}
 <div class = 'col-md-11'>
+    <p class = 'lead'>Income</p>
+    <p>Input a line in the table below for each source of income for your household</p>
     <table class = 'table'>
         <tr>
-            <th>#</th><th>Who</th><th>Hours</th><th>Wage</th><th>Monthly Gross</th>
+            <th>#</th><th>Who</th><th>Description</th><th>Hours</th><th>Wage</th><th>Monthly Gross</th>
         </tr>
         <tr>
-            <td>1</td><td>Spouse</td><td>40</td><td>$12.25</td><td>$2123.00</td>
+            <td>1</td>
+            <td style = 'width : 150px'><select class = 'form-control' id = 'who'>
+                <option>Applicant</option>
+                <option>Spouse</option>
+                <option>Parent</option>
+                <option>Child</option>
+                <option>Sibbling</option>
+            </select></td>
+            <td>Walgreens</td>
+            <td>40</td><td>$12.25</td><td>$2123.00</td>
+            <td><span class = 'glyphicon glyphicon-plus'></span></td>
+        </tr>
+        <tr>
+            <td></td> <td></td> <td></td> <td></td> <td></td> <td><strong>$2123.00 Total</strong></td>
         </tr>
     </table>
 </div>
-<div class = 'col-md-1'>
-    <span class = 'glyphicon glyphicon-plus'></span>
-</div>
 {% endblock %}
+<script>
+'use strict';
+function createIncomeRow() {
+
+}
+
+function completeIncomeRow {
+
+}
+jQuery(document).ready(function() {
+    console.log(jQuery('#who option:selected').text());
+}
+</script>
